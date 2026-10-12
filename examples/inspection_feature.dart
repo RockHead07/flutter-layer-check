@@ -35,14 +35,14 @@ class InspectionController extends ChangeNotifier {
   InspectionController(this._repo);
   final InspectionRepository _repo;
   List<Inspection> items = const [];
-  String? error;
+  InspectionFailure? error;
 
   Future<void> load() async {
     try {
       items = await _repo.fetchAll();
       error = null;
     } on InspectionFailure catch (f) {
-      error = f.message;
+      error = f;
     }
     notifyListeners();
   }
@@ -77,7 +77,7 @@ class _InspectionViewState extends State<InspectionView> {
       builder: (_, __) => Scaffold(
         body: Column(children: [
           TextField(controller: _note),
-          if (widget.controller.error != null) Text(widget.controller.error!),
+          if (widget.controller.error != null) Text(widget.controller.error!.message),
           Expanded(
             child: ListView.builder(
               itemCount: widget.controller.items.length,
@@ -89,3 +89,4 @@ class _InspectionViewState extends State<InspectionView> {
     );
   }
 }
+
