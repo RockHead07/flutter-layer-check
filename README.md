@@ -10,8 +10,8 @@ Jalankan `opencode`, lalu:
 `Pakai skill flutter-layer-check untuk mereview lib/`
 
 ## Demo 3 menit
-1. `examples/bad_widget.dart`: skill harus menandai pelanggaran aturan 1, 3, 4.
-2. `examples/good_layers.dart`: skill harus melaporkan tidak ada pelanggaran.
+1. `examples/inspection_page.dart`: skill harus menandai pelanggaran aturan 1, 3, 4.
+2. `examples/inspection_feature.dart`: skill harus melaporkan tidak ada pelanggaran.
 
 ## Catatan
 Skill hanya file Markdown berisi instruksi. Tool agent lain yang mendukung skill bisa memakainya; di chat AI biasa isinya bisa ditempel sebagai prompt.

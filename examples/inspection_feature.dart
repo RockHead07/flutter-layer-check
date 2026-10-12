@@ -1,4 +1,3 @@
-// CONTOH BENAR (ringkas, satu file demi demo). Skill tidak boleh menandai ini.
 import 'package:flutter/material.dart';
 
 abstract class ApiClient {
@@ -18,7 +17,7 @@ class Inspection {
 
 class InspectionRepository {
   InspectionRepository(this._api);
-  final ApiClient _api; // di-inject, bisa di-fake
+  final ApiClient _api;
 
   Future<List<Inspection>> fetchAll() async {
     try {
@@ -78,6 +77,7 @@ class _InspectionViewState extends State<InspectionView> {
       builder: (_, __) => Scaffold(
         body: Column(children: [
           TextField(controller: _note),
+          if (widget.controller.error != null) Text(widget.controller.error!),
           Expanded(
             child: ListView.builder(
               itemCount: widget.controller.items.length,
