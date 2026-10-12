@@ -28,6 +28,7 @@ First classify each file into a layer. Then output one line per rule 1-7:
 - N/A: the file has no such layer.
 Use no other statuses. Add a one-line fix under each VIOLATION.
 Put findings outside the rules under "Other notes".
+Limit "Other notes" to 3 items.
 End with a one-sentence summary. Write in the user's language.
 
 ## When unsure
